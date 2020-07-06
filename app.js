@@ -1,10 +1,10 @@
 //jshint esversion:6
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
 
+// Initializng the modules
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -16,7 +16,7 @@ app.use(express.static("public"));
 
 
 // Connect to db
-mongoose.connect("mongodb://localhost/27017/<dbName>", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb://localhost:27017/<dbName>", {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Create a schema
 const <SchemaName> = new mongoose.Schema({
@@ -29,6 +29,7 @@ const <ModelName> = mongoose.model("<Singular Version of the collection Name>", 
 
 //TODO
 
+// Start server listening at port 3000
 app.listen(3000, function() {
   console.log("Server started on port 3000");
 });
